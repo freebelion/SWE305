@@ -13,13 +13,13 @@
 - It is an easy-to-learn language useful for beginners, because it leaves out the unsafe features of C++, while it is not as restrictive as Java.
 - C# itself does not require installation, but you will need install a current version of .NET on Windows (dotnet on Linux) to run the code you have written with C#.
 - Also installing a code editor will help your development work easier.
-  - You can install Visual Studio Community edition on Windows, which the instructor has used to creaste the example projects.
+  - You can install Visual Studio Community edition on Windows, which the instructor has used to create the example projects.
   
   > You will need to select the .NET Desktop Development workload option while installing Visual Studio, which comes selected by default.
 
   - or, you can install VS Code on Windows, Linux and MacOS.
   
-  > On VS Code, you will need to install an extension which will help you code and compile ith C#.
+  > On VS Code, you will need to install an extension which will help you code and compile with C#.
 
 ## About C# Programming Language
 Let's start with some theoretical background.
