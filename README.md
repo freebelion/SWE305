@@ -25,13 +25,14 @@
 Let's start with some theoretical background.
 In this introduction, there will only be single-line examples of C# syntax, not complete code blocks.
 
-- C# code consists of lines where a variable is declared or a command is executed.
+- C# code consists of *statements*, which are lines of code where a variable is declared or a command is executed.
   All those statements end with a semicolon.
 - Anything between two semicolons is one statement, even if it extends over multiple lines.
 - A C# code file may start with <code>using</code> statements which refer to <code>namespace</code>s,
   which are sort of libraries which contain definitions.
-  <code>System</code> is the most common namespace, because it contains the basic definitions needed in .NET code.
-- A C# code file may also define its own namespace; that will be a line like <code>namespace project</code>
+  <code>System</code> is the most common namespace, because it contains the basic definitions needed in .NET programs.
+- C# code files belonging to the same project will be in the program's own namespace;
+  those code files will contain a line like <code>namespace MyCsProject</code>
   with a pair of curly braces enclosing the statements belonging to that namespace.
   > Namespaces help distinguish definitions belonging to different .NET libraries,
   as well as multiple projects referred by the same application.
