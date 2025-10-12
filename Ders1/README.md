@@ -7,7 +7,7 @@ when the application is run.
 so a console application will not have any use beyond
 running simple tests.
 - However, console applications are a useful starting step
-in learning the basics of programming, because it does not
+in learning the basics of programming, because they do not
 require understanding the complex steps of constructing
 visual interfaces.
 
@@ -43,3 +43,24 @@ visual interfaces.
   - <code>long</code> type has eight bytes (64 bits) and can store up to 18446744073709551615 for **unsigned** version.<br><br>
   *NOTE: Actually, the first bit of each numerical data type is reserved as the sign bit,
    so the data limits for the above types are actually  between minus and plus half of the <code>unsigned</code> limits*
+ 
+ - Next, we see assignment operations.
+    - In C#, an assignment operation is for transferring the value on the right side
+      to the memory block represented by variable on the left side, like in:
+      <code>i = 24;</code>
+    - If a variable name appears on the right side, the value of that variable
+      is transferred to the variable on the left side, like in:
+      <code>j = i;</code>
+    - If an arithmetic operation or a math function call appears on the right side,
+      the value of the result is transferred to the variable on the left side, like in:
+      <code>k = i * j;</code>
+- In a console application, we use <code>Console.Write()</code> function
+  to get values written on the same line, and <code>Console.WriteLine()</code> function
+  to write values on a separate line.
+  - In both these function calls, whatever characters appear in quotation marks, 
+    they are written exactly as they appear, like in:<br>
+    <code>Console.Write("This will be WRITTEN    exactly (as it appears)");</code>
+  - If values of variables must be written, placeholders
+    <code>{0}</code>, <code>{1}</code>, <code>{2}</code>, ... must be used within quotation marks,
+    while the variable names appear after the quotation marks, separated by commas:<br>
+    <code>Console.WriteLine("i = {0} j = {1} k = {2}", i, j, k);</code>
