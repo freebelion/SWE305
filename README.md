@@ -46,10 +46,10 @@ In this introduction, there will only be single-line examples of C# syntax, not 
   > I won't explain what "run" means in the programming jargon.
 - A C# program will contain  a class definition with its name,
   unless the developer chose not to use *top level statements*.
-  > Again, we will se examples of that, later.
+  > Again, we will see examples of that, later.
 - The program class will contain the <code>Main</code> function,
   which contain the first statements to be executed while the program runs.
-  > If the developer chose not to use top level statements, we won't see the <code>Main</code> function in the code file,
+  > If you choose not to use top level statements, you won't see the <code>Main</code> function in the code file,
   but it will just be hidden.
 - <code>Main</code> function's name will always be **Main**,
   because that's the only way .NET compiler will know where the program code starts.
@@ -62,3 +62,18 @@ In this introduction, there will only be single-line examples of C# syntax, not 
   - Anything following a <code>//</code> is a single-line comment which ends where the code line ends.
   - Anything between a <code>/\*</code> and a <code>\*/</code> a C-style multi-line comment.
   > The compiler will ignore anything in single- or multi-line comments.
+
+  ## About This Course
+
+- In this course, I will start with a console application project
+  [Ders1](Ders1/README.md)
+  where I will summarize the basic syntax of the C# programming language
+  and show how to use the most important objects defined in .NET libraries.
+- In the second project example, I will summarize the principles of
+  object-oriented programming with C#.
+- In later project examples, I will introduce the students to visual
+  programming based on WPF platform.
+- All those projects will have their own README files, briefly explaining
+  the development steps in writing.
+- All those projects and their explanations will be updated from time to time.
+  Students should clone this repository to follow the changes.
