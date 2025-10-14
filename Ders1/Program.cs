@@ -19,7 +19,7 @@ Console.WriteLine("i = {0:N} j = {1:N4} k = {2:G}", i, j, k);
 Console.WriteLine(); // this is for leaving a line blank
 
 // Below, we see three different floating-point variable declarations.
-float f = 709.045F; // A 4-bute System.Single type variable with an initial value
+float f = 709.045F; // A 4-byte System.Single type variable with an initial value
 double d = 903.603E68; // An 8-byte System.Double type variable with an initial value in exponential notation
 decimal c = 1902989070089900; // A 16-byte System.Decimal type variable which is better than double for accuracy
 
