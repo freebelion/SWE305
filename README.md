@@ -66,11 +66,12 @@ In this introduction, there will only be single-line examples of C# syntax, not 
   ## About This Course
 
 - In this course, I will start with a console application project
-  [Ders1](Ders1/README.md)
+  [CSIntro](CSIntro/README.md)
   where I will summarize the basic syntax of the C# programming language
   and show how to use the most important objects defined in .NET libraries.
-- In the second project example, I will summarize the principles of
-  object-oriented programming with C#.
+- The second project example is also a console application project
+  where I summarize the basics of object-oriented programming with C#.
+  [CSoop](CSoop/README.md)
 - In later project examples, I will introduce the students to visual
   programming based on WPF platform.
 - All those projects will have their own README files, briefly explaining
