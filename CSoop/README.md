@@ -1,7 +1,7 @@
 ﻿## CSoop
 - This is a Console Application project which summarizes the basics
-  of object-oriented programming with C# programmin language.
-- In this project, I checked the option
+  of object-oriented programming with C# programming language.
+- While creating this project, I checked the option
   'Do not use top-level statements',
   so the main code file **Program.cs** displays the project namespace,
   **Program** class and **Main** function which is the entry point
@@ -21,6 +21,7 @@
   - On the upcoming dialog form, we name the class.
     
     ![Naming Class](NamingClass.png)
+### `Fraction` Class
 
 - A class is basically a code package representing a real-world object.
   With a code package like that, we enclose the attributes
@@ -81,7 +82,7 @@
   
     >*Hiding the internal properties of the real object in **private**
       fields is known as **data hiding**. This is the second principle
-      of object-oriented programming.**
+      of object-oriented programming.*
 
 - **private** fields help hide the attributes of an object,
   but we can provide controlled access to them through
@@ -182,7 +183,64 @@
   to get the fraction objects written as strings and numerical values:
 ```
 ...
-Console.WriteLine("{0} = {1}", (string)k1, (double)k1);
+Console.WriteLine("Fraction{0} = {1}", (string)k1, (double)k1);
 ...
-Console.WriteLine("{0} = {1}", (string)k2, (double)k2);
+Console.WriteLine("Fraction{0} = {1}", (string)k2, (double)k2);
 ```
+These statements in the **Program** class produce the following output:
+```
+Fraction[-1/2] = -0,5
+Fraction[2/5] = 0,4
+```
+
+### `Point` Class
+- Our second class example is `Point`, which represents a point
+  in a two-dimensional coordinate space.
+- Since the two coordinates are going to be two `double` variables
+  which can take any value, there is no need to create **private**
+  fields with public properties providing controlled access.
+- Therefore, `Point` class defines the coordinates as "auto-properties",
+  two properties without code in their **get** and **set** blocks.
+- `Point` class has a *member function* which calculates the distance
+  between the point object and another point object.
+  - This member function has a special feature.
+    In order to explain how it works, I have created two separate versions
+    described in a comment block.
+  - The following version calculates the distance of the `Point` object to the origin:
+    ```
+    public double Distance()
+    {
+        return Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2));
+    }
+    ```
+  - This other version calculates the distance of the `Point` object another `Point` object:
+    ```
+    public double Distance(Point p)
+    {
+        return Math.Sqrt(Math.Pow(X - p.X, 2) + Math.Pow(Y - p.Y, 2));
+    }
+    ```
+  - The final version which is active in the class definition combines these two versions.
+    The idea is that, if a parameter is sent to the function `Distance`,
+    it will calculate the distance of the `Point` object another `Point` object,
+    but if no parameter is provided, it will calculate the distance to the origin.
+  - The solution is to use a function parameter with a default value null.
+    In .NET Core which we are using in our example, we do that with a nullable reference argument:<br>
+    `public double Distance(Point? p = null)`
+  - If the function is called without a paremeter, like in
+    ```
+    Point p1 = new Point(3,4);
+    Console.WriteLine("Point{0} distance to the origin: {1}", p1, p1.Distance());
+    ```
+  - However, if the reference of another `Point` object is sent,
+    then the member function will calculate the distance between the first point
+    and the other point sent as the parameter:
+    ```
+    Point p2 = new Point(4,3);
+    Console.WriteLine("Distance between Point{0} and Pont{1}: {2}", p1, p2, p1.Distance(p2));
+    ```
+    Those statements of the **Program** class produce the following output:
+    ```
+    Point(3 : 4) distance to the origin: 5
+    Distance between Point(3 : 4) and Pont(4 : 3): 1,4142135623730951
+    ```

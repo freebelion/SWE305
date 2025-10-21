@@ -11,12 +11,18 @@
             k1.Num = 1; k1.Denum = -2; // Note that we deliberately assigned a negative value to the denominator.
 
             // Here we write the Fraction object represented by k1
-            Console.WriteLine("{0} = {1}", (string)k1, (double)k1); // in string form and also as a numerical value.
+            Console.WriteLine("Fraction{0} = {1}", (string)k1, (double)k1); // in string form and also as a numerical value.
 
             // Here we define another Fraction type reference variable and also create a Fraction object with initial values:
             Fraction k2 = new Fraction(2,5);
             // Here we write the Fraction object represented by k2
-            Console.WriteLine("{0} = {1}", (string)k2, (double)k2); // in string form and also as a numerical value.
+            Console.WriteLine("Fraction{0} = {1}", (string)k2, (double)k2); // in string form and also as a numerical value.
+
+            Point p1 = new Point(3, 4);
+            Console.WriteLine("Point{0} distance to the origin: {1}", p1, p1.Distance());
+
+            Point p2 = new Point(4, 3);
+            Console.WriteLine("Distance between Point{0} and Pont{1}: {2}", p1, p2, p1.Distance(p2));
         }
     }
 }
