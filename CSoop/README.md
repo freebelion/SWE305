@@ -242,5 +242,19 @@ Fraction[2/5] = 0,4
     Those statements of the **Program** class produce the following output:
     ```
     Point(3 : 4) distance to the origin: 5
-    Distance between Point(3 : 4) and Pont(4 : 3): 1,4142135623730951
+    Distance between Point(3 : 4) and Point(4 : 3): 1,4142135623730951
     ```
+  - The `Console.WriteLine()` statements above write the `Point` objects
+    on the console window by getting their string equivalents through
+    the `ToString()` member function defined in the `Point` class.
+    - `ToString()` member function is actually defined in the `object` class,
+      which is the parent class of all classes.
+    - If a class object has to specify how it should be written as a string,
+      it should **override** this function that it has inherited from
+      the `object` class.
+    - `ToString()` provides a string equivalent of an object,
+      but it is not the same as the `(string)` conversion operator
+      that we defined in the `Fraction` class example.
+    - `ToString()` is called automatically, whenever an object must appear
+      as a string on a visual interface, especially in data-bound controls.<br>
+      > *`(string)` conversion operator could not be called automatically.*

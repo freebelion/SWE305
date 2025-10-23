@@ -22,7 +22,7 @@
             Console.WriteLine("Point{0} distance to the origin: {1}", p1, p1.Distance());
 
             Point p2 = new Point(4, 3);
-            Console.WriteLine("Distance between Point{0} and Pont{1}: {2}", p1, p2, p1.Distance(p2));
+            Console.WriteLine("Distance between Point{0} and Point{1}: {2}", p1, p2, p1.Distance(p2));
         }
     }
 }
