@@ -23,6 +23,33 @@
 
             Point p2 = new Point(4, 3);
             Console.WriteLine("Distance between Point{0} and Point{1}: {2}", p1, p2, p1.Distance(p2));
+
+            Console.WriteLine();
+            Account acct1 = new Account();
+            Console.WriteLine("The following transactions are performed on a regular Account object:");
+            Console.Write("Account[{0}] Balance = {1:C2} ", acct1.No, acct1.Balance);
+            decimal amount = 25000; acct1.DoTransaction(amount);
+            Console.Write("Transaction = {0:C2} Balance = {1:C2}", amount, acct1.Balance);
+            Console.WriteLine();
+            amount = -50000; acct1.DoTransaction(amount);
+            Console.Write("Transaction = {0:C2} Balance = {1:C2}", amount, acct1.Balance);
+            Console.WriteLine();
+            Console.WriteLine("\tNote that Account[{0}] does not allow an overdraft, so its balance remains the same.", acct1.No);
+            Console.WriteLine();
+            Account acct2 = new CreditAccount();
+            Console.WriteLine("The following transactions are performed on CreditAccount object\naccessed through a reference variable of Account type:");
+            Console.Write("Account[{0}] Balance = {1:C2} ", acct2.No, acct2.Balance);
+            amount = 25000; acct2.DoTransaction(amount);
+            Console.Write("Transaction = {0:C2} Balance = {1:C2}", amount, acct2.Balance);
+            Console.WriteLine();
+            amount = -50000; acct2.DoTransaction(amount);
+            Console.Write("Transaction = {0:C2} Balance = {1:C2}", amount, acct2.Balance);
+            Console.WriteLine();
+            Console.WriteLine("\tNote that Account[{0}] allows an overdraft.", acct2.No);
+            amount = -100000; acct2.DoTransaction(amount);
+            Console.Write("Transaction = {0:C2} Balance = {1:C2}", amount, acct2.Balance);
+            Console.WriteLine();
+            Console.WriteLine("\tbut not below its overdraft limit.", acct2.No);
         }
     }
 }

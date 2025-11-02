@@ -258,3 +258,30 @@ Fraction[2/5] = 0,4
     - `ToString()` is called automatically, whenever an object must appear
       as a string on a visual interface, especially in data-bound controls.<br>
       > *`(string)` conversion operator could not be called automatically.*
+
+### `Account` Class
+- Our third example is the `Account` class, which represents a bank account.
+- In this example, I am showing the XML documentation comments
+  ```
+  /// <summary>
+  /// ... comments ...
+  /// </summary>
+  ```
+  They are a feature of Visual Studio which helps us to produce documentation for the project,
+- if we use the right options or tools
+  (like [DefaultDocumentation](https://www.nuget.org/packages/DefaultDocumentation).
+  - This class contains the member variable `_balance` to store the account balance
+  - and the public property `Balance` which provides controlled access to that hidden variable.
+  - The class also defines a **static** variable `accountCount` to help the class
+    to keep track of how many objects have been created.
+  - When the constructor is called when a new object is being created,
+    that static variable is incremented and the new `Account` object
+    assigns the new count to its own property `No` as its account number.
+- The important feature of this `Account` class is that,
+  it defines its balance checking function `BalanceisSufficient` as virtual,
+  so that classed derived from it can redefine the method of checking the balance.
+- That's what is done in the `CreditAccount` class which replaces
+  this balance checking function with the `override` keyword.
+  - You can see how this works by running the program which creates
+    two objects of the old and new type:
+    ![Account Outputs](AccountOutputs.png)
