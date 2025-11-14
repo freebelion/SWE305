@@ -65,16 +65,25 @@ In this introduction, there will only be single-line examples of C# syntax, not 
 
   ## About This Course
 
-- In this course, I will start with a console application project
-  [CSIntro](CSIntro/README.md)
-  where I will summarize the basic syntax of the C# programming language
+I am listing the projects in the order they were discussed in classes,
+though the contents and explanations of them may be different
+in this repository.
+> *The contents and explanations of these projects
+   may be updated from time to time.
+   Students should clone this repository and synch it occasionally
+   to follow the changes.*
+- [CSIntro](CSIntro/README.md) is a console application project
+  where I summarize the basic syntax of the C# programming language
   and show how to use the most important objects defined in .NET libraries.
-- The second project example is also a console application project
+- [CSoop](CSoop/README.md) is also a console application project
   where I summarize the basics of object-oriented programming with C#.
-  [CSoop](CSoop/README.md)
-- In later project examples, I will introduce the students to visual
-  programming based on WPF platform.
-- All those projects will have their own README files, briefly explaining
-  the development steps in writing.
-- All those projects and their explanations will be updated from time to time.
-  Students should clone this repository to follow the changes.
+- [WpfGrid1](WpfGrid1/README.md) is the first visual programming
+  project based on WPF framework. It simply introduces the common
+  WPF container `<Grid>` which is used to produce a grid-like
+  layout on application windows.
+- [WpfCrudeApp1](WpfCrudeApp1/README.md) is a crude example
+  where I show the old method of writing code to handle
+  interactions with named controls.
+- [WpfBank1](WpfBank1/README.md) is the project
+  where I first demonstrate WPF data bindings,
+  but it is still a crude example with serious drawbacks.

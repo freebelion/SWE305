@@ -88,7 +88,7 @@ for (int n=0; n<names.Count; n++)
     Console.WriteLine("names[{0}] : {1}", n, names[n]);
 }
 
-//This is the simplified .NET way of creaqting a collection
+//This is the simplified .NET way of creating a collection
 List<double> dblist = [];
 // However, we still need to add elements, maybe by reading in values input by the user:
 const int DBLCOUNT = 10;

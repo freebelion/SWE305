@@ -102,7 +102,7 @@ visual interfaces.
     *The rule of a positive element count still holds, but it will be enforced at runtime,
      meaning that, if the integer value turns out to be 0 or negative
      at the moment the array is being created, a runtime error will occur.*
-  - For numerical data types like `int`, <double`, etc.
+  - For numerical data types like `int`, `double`, etc.
     creating an array will also create the elements directly.
     Then we can access array elements by their index numbers,
     usually in a counting loop like `for`.
