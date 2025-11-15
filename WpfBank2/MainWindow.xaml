@@ -1,0 +1,64 @@
+﻿<Window x:Class="WpfBank2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBank2"
+        mc:Ignorable="d"
+        Title="Bank Management Window"
+        Height="300" Width="400"
+        WindowStyle="ToolWindow"
+        ResizeMode="NoResize"
+        FontSize="18">
+
+    <Window.DataContext>
+        <local:BankViewModel/>
+    </Window.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ListBox Grid.Row="0"
+                     Background="AliceBlue"
+                     ItemsSource="{Binding Accounts}"
+                     SelectedItem="{Binding SelectedAccount}"/>
+            <Button Grid.Row="1" Content="+"
+                    Command="{Binding CreateAccountCommand}"/>
+        </Grid>
+
+        <Grid Grid.Column="1" DataContext="{Binding SelectedAccount}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Background="SteelBlue"
+                       Text="{Binding Balance}"/>
+
+            <StackPanel Grid.Row="1">
+                <Button Content="Deposit 50"
+                        Command="{Binding DoTransactionCommand}"
+                        CommandParameter="50"/>
+                <Button Content="Withdraw 50"
+                        CommandParameter="-50"/>
+                <Button Content="Deposit 100"
+                        CommandParameter="100"/>
+                <Button Content="Withdraw 100"
+                        CommandParameter="-100"/>
+                <Button Content="Deposit 250"
+                        CommandParameter="250"/>
+                <Button Content="Withdraw 250"
+                        CommandParameter="-250"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

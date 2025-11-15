@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Security.Principal;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -34,7 +35,6 @@ namespace WpfBank1
         /// may not have selected an account.
         /// </summary>
         public Account? SelectedAccount { get; set; }
-
         public MainWindow()
         {
             InitializeComponent();
@@ -44,12 +44,12 @@ namespace WpfBank1
             // Create the account list
             Accounts = [];
             // Add some empty accounts
-            for(int i=0; i< 10; i++)
+            for (int i = 0; i < 10; i++)
             {// In recent versions of C#, simply calling new() is enough to create an object
                 Accounts.Add(new()); // same as Accounts.Add(new Account());
             }
             // Initially, there is no selectedAccount
-            SelectedAccount = null;         
+            SelectedAccount = null;
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace WpfBank1
         /// <param name="sender">The source of event (+ button at the bottom of the left column)</param>
         /// <param name="e">The details of the event</param>
         private void CreateAccount(object sender, RoutedEventArgs e)
-        {// Sadly, the new account object that we add won't be shown in the ListBox
+        {
             Accounts.Add(new());
         }
     }

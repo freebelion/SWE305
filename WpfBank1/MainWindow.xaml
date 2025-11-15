@@ -5,12 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfBank1"
         mc:Ignorable="d"
-        Title="ATMWindow"
-        Height="300" Width="400"
-        WindowStyle="ToolWindow"
-        ResizeMode="NoResize"
-        FontSize="18">
-    
+        Title="ATMWindow" Height="300" Width="400"
+        WindowStyle="ToolWindow" ResizeMode="NoResize" FontSize="18">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -24,12 +21,12 @@
             </Grid.RowDefinitions>
 
             <ListBox Grid.Row="0"
-                     Background="AliceBlue"
-                     ItemsSource="{Binding Accounts}"
-                     SelectedItem="{Binding SelectedAccount}"/>
+                 Background="AliceBlue"
+                 ItemsSource="{Binding Accounts}"
+                 SelectedItem="{Binding SelectedAccount}"/>
             <Button Grid.Row="1"
-                    Content="+"
-                    Click="CreateAccount"/>
+                Content="+"
+                Command="{Binding CreateAccount}"/>
         </Grid>
 
         <Grid Grid.Column="1">
@@ -42,23 +39,17 @@
                        Text="{Binding SelectedAccount.Balance}"/>
 
             <StackPanel Grid.Row="1">
-                <Button Content="Deposit 50"
-                        Tag="50"
+                <Button Content="Deposit 50" Tag="50"
                         Click="Button_Click"/>
-                <Button Content="Withdraw 50"
-                        Tag="-50"
+                <Button Content="Withdraw 50" Tag="-50"
                         Click="Button_Click"/>
-                <Button Content="Deposit 100"
-                        Tag="100"
+                <Button Content="Deposit 100" Tag="100"
                         Click="Button_Click"/>
-                <Button Content="Withdraw 100"
-                        Tag="-100"
+                <Button Content="Withdraw 100" Tag="-100"
                         Click="Button_Click"/>
-                <Button Content="Deposit 250"
-                        Tag="250"
+                <Button Content="Deposit 250" Tag="250"
                         Click="Button_Click"/>
-                <Button Content="Withdraw 250"
-                        Tag="-250"
+                <Button Content="Withdraw 250" Tag="-250"
                         Click="Button_Click"/>
             </StackPanel>
         </Grid>

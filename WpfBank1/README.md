@@ -103,20 +103,50 @@ Let me summarize the development steps:
   - Implementing the `INotifyPropertyChanged` interface
     in `Account` class would inform the data-bound
     `TextBlock` of the changes in **Balance** property.
+    - Implementing that interface means changing the class
+      definition header:\
+      `public clas Account : INotifyPropertyChanged`
+    - The above line may look like a class derivation,
+      but it is actually *implementing an interface*.
+      > A class implementing an interface makes a promise
+        to fulfill the requirements of that interface.\
+        In the case of `INotifyPropertyChanged`,
+        the class definition promises that the object
+        of its type will isue an event in case important
+        properties (like **Balance** for `Account`) change.
+    - Fullfilling that requirement in the `Account` class
+      means adding this evenet definition:\
+      `public event PropertyChanhedEventHandler? PropertyChanged`
+    - and this oversimplified function definition
+      which will issue the event message:
+      ```
+      protected void OnPropertyChanged(string propertyName)
+      {
+         if(PropertyChanged != null)
+         { PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); }
+      }
+      ```
+    - Then we can add the following line to the end of
+      the **set** block of the **Balance** property
+      to issue the change notification for that property:\
+      `OnNotifyPropertyChanged("Balance");`\
+      After that, the `SelectedAccount` object will inform
+      the `TextBlock` of any changes in its **Balance**.
     - However, that would not solve the problem completely,
       because we would also have to implement the same interface
-      on the window itself, so the controls on the right
-      would know when the selected account changed on the left.
-    - Implementing that interface with hand-written code
-      is impractical and error-prone. In the next project,
-      I will show how to use a package to automate
-      that part of the work.
-  - Another major problem is that, transactions on the selected
-    account are performed by a function handling the **Click**
-    events of the buttons on the right.
-    - While this may seem fine, it is not,
-      because if we change the way the controls take actions,
-      we would have to rewrite the event handling code.
-  - The ultimate solution to these problems is relying
-    on Model-View-ViewModel (MVVM) architecture,
-    which I will also demonstrate on the next project.
+      on the window itself, because the `SelectedAccount` property
+      belongs to the window class.
+ - A more proper solution is to package the dynamic list of
+   `Accounts` and `SelectedAccount` in a separate class
+   which will handle communication between data objects
+   (which are `Account` objects in this application)
+   and the visual controls.
+   - This new class will be a **ViewModel** class,
+     meanig that we are now venturing into
+     Model-View-ViewModel (MVVM) architecture.
+   - That viewmodel class will also have *command functions*
+     which will replace the event handler functions
+     for the buttons' **Click** events.
+ - I will show how to do those in a second version of
+   this application, but I will make use of a toolkit
+   to automatically produce the repeating blocks of code.

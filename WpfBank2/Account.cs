@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -6,9 +8,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfBank1
+namespace WpfBank2
 {
-    public class Account
+    public partial class Account : ObservableObject
     {
         /// <summary>
         /// This static variable helps the class know
@@ -17,12 +19,6 @@ namespace WpfBank1
         private static uint accountCount = 0;
 
         /// <summary>
-        /// This private member variable stores the account balance.
-        /// </summary>
-        private decimal _balance;
-
-        
-        /// <summary>
         /// This property lets others know the account number
         /// but only lets the Account object assign itself a number.
         /// </summary>
@@ -30,16 +26,11 @@ namespace WpfBank1
         { get; private set; }
 
         /// <summary>
-        /// This property lets others know the account balance
-        /// but only lets the Account object change that balance.
+        /// This private variable is the basis for the observable property
+        /// which will be defined by MVVM Toolkit.
         /// </summary>
-        public decimal Balance
-        {
-            get { return _balance; }
-            private set { 
-                _balance = value;
-            }
-        }
+        [ObservableProperty]
+        private decimal _balance;
 
         /// <summary>
         /// This default constructor creates a new Account object
@@ -67,13 +58,19 @@ namespace WpfBank1
         /// This member function performs a monetary transaction
         /// on the account balance.
         /// </summary>
-        /// <param name="amount">The transaction amount</param>
-        public void DoTransaction(decimal amount)
+        /// <param name="parameter">The cxommand parameter (the transaction amount)</param>
+        [RelayCommand]
+        public void DoTransaction(object parameter)
         {
-            if (amount > 0) // A positive amount means a money deposit.
-                Deposit(amount);
-            else // A negative amount means money withdrawal.
-                Withdraw(Math.Abs(amount));
+            try
+            {// We try to check if a valid parameter has been passed
+                decimal amount = Convert.ToDecimal(parameter);
+                if (amount > 0) // A positive amount means a money deposit.
+                    Deposit(amount);
+                else // A negative amount means money withdrawal.
+                    Withdraw(Math.Abs(amount));
+            }
+            catch { } // We do nothing about an invalid parameter
         }
 
         /// <summary>
@@ -81,7 +78,7 @@ namespace WpfBank1
         /// Account object can invoke it in its own code.
         /// </summary>
         /// <param name="amount">The amount to be deposited</param>
-        /// <returns></returns>
+        /// <returns>The success status</returns>
         private bool Deposit(decimal amount)
         {
             Balance += amount;
@@ -93,7 +90,7 @@ namespace WpfBank1
         /// Account object can invoke it in its own code.
         /// </summary>
         /// <param name="amount">The amount to be withdrawn</param>
-        /// <returns></returns>
+        /// <returns>The success status</returns>
         private bool Withdraw(decimal amount)
         {
             if(BalanceIsSufficient(amount))
