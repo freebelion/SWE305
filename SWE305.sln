@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfBank1", "WpfBank1\WpfBan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfBank2", "WpfBank2\WpfBank2.csproj", "{36DE850F-763F-4D74-9F46-23F4B5E230B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfLogisticsApp1", "WpfLogisticsApp1\WpfLogisticsApp1.csproj", "{C70CC60C-04CA-4C23-B7F7-004FAC4A2B4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{36DE850F-763F-4D74-9F46-23F4B5E230B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36DE850F-763F-4D74-9F46-23F4B5E230B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36DE850F-763F-4D74-9F46-23F4B5E230B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C70CC60C-04CA-4C23-B7F7-004FAC4A2B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C70CC60C-04CA-4C23-B7F7-004FAC4A2B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C70CC60C-04CA-4C23-B7F7-004FAC4A2B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C70CC60C-04CA-4C23-B7F7-004FAC4A2B4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

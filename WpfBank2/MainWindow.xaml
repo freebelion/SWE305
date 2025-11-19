@@ -41,7 +41,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Background="SteelBlue"
+            <TextBlock Grid.Row="0" Background="LightBlue"
                        Text="{Binding Balance}"/>
 
             <StackPanel Grid.Row="1">
@@ -49,14 +49,19 @@
                         Command="{Binding DoTransactionCommand}"
                         CommandParameter="50"/>
                 <Button Content="Withdraw 50"
+                        Command="{Binding DoTransactionCommand}"
                         CommandParameter="-50"/>
                 <Button Content="Deposit 100"
+                        Command="{Binding DoTransactionCommand}"
                         CommandParameter="100"/>
                 <Button Content="Withdraw 100"
+                        Command="{Binding DoTransactionCommand}"
                         CommandParameter="-100"/>
                 <Button Content="Deposit 250"
+                        Command="{Binding DoTransactionCommand}"
                         CommandParameter="250"/>
                 <Button Content="Withdraw 250"
+                        Command="{Binding DoTransactionCommand}"
                         CommandParameter="-250"/>
             </StackPanel>
         </Grid>

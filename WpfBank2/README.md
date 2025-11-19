@@ -1,6 +1,6 @@
 ﻿## WpfBank2
 - This is the second version of the bank management
-  application which properly implements the MVVM architecture.
+  application where I properly implement the MVVM architecture.
 - I had noted I would make use of a toolkit while developing
   this version, so I first opened the ""NuGet Package Manager""
   from the menu under the header "Tools":
@@ -13,8 +13,8 @@
 
   ![Installing the Toolkit](InstallingToolkit.png)
 
-- and verified it was installed byy looking into
-  the project references:
+- and verified it was installed by looking into
+  project references:
   
   ![Toolkit Installed](ToolkitInstalled.png)
 
@@ -85,15 +85,16 @@
     and label that variable as an `[ObservableProperty]`.
   - The second rule is about naming that variable;
     the name should start with a lowercase letter,
-    like `selectedAccount`, or with an underscore character,
+  - like `selectedAccount`,
+  - or with an underscore character,
     like `_selectedAccount`.
   - If we follow that second rule, the toolkit will define
     the observable property with the same name,
     but with a starting capital letter, like `SelectedAccount`.
 
 - MVVM Toolkit also eliminates the need for event handlers.
-  - Instead, it lets us label member functions of the viewmodel
-    class as `[RelayCommand]`.
+  - Instead of event handlers, we write *command functions*,
+    member functions labeled as `[RelayCommand]`.
   - We then associate control actions with commands
     and that action will excute its associated command.
   - For example, I created the command function

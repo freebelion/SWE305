@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:WpfBank1"
         mc:Ignorable="d"
         Title="ATMWindow" Height="300" Width="400"
-        WindowStyle="ToolWindow" ResizeMode="NoResize" FontSize="18">
-
+        WindowStyle="ToolWindow" ResizeMode="NoResize" 
+        FontSize="18">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
@@ -26,7 +26,7 @@
                  SelectedItem="{Binding SelectedAccount}"/>
             <Button Grid.Row="1"
                 Content="+"
-                Command="{Binding CreateAccount}"/>
+                Click="CreateAccount"/>
         </Grid>
 
         <Grid Grid.Column="1">
@@ -35,7 +35,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Background="SteelBlue"
+            <TextBlock Grid.Row="0" Background="LightBlue"
                        Text="{Binding SelectedAccount.Balance}"/>
 
             <StackPanel Grid.Row="1">
