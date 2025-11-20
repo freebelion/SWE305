@@ -89,4 +89,4 @@ in this repository.
   but it is still a crude example with serious drawbacks.
 - [WpfBank2](WpfBank2/README.md) is the second and better version
   of WpfBank1. It implements the MVVM architecture properly,
-  with the help of NuGet packaged "Community Toolkit.Mvvm".
+  with the help of NuGet package "Community Toolkit.Mvvm".
